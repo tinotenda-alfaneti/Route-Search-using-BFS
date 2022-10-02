@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         RouteSearch findRoute  = new RouteSearch();
         DataFile dataFiles = new DataFile();
-        Route testRoute = new Route(dataFiles.getSourceAirportCode(dataFiles.readAirportsFile()));
+        Route testRoute = new Route(dataFiles.getSourceAirportCode(Airport.readAirportsFile()));
         findRoute.routeSearch(testRoute);
 
 

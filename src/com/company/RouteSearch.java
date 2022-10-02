@@ -33,7 +33,7 @@ public class RouteSearch {
                 RouteNode destAirport = new RouteNode(dest, currAirport);
                 if (!visitedAirport.contains(destAirport.route.airportCode) &&
                         !destQueue.contains(destAirport)) {
-                    if (destAirport.route.airportCode.equals(dataFiles.getDestAirportCode(dataFiles.readAirportsFile()))) {
+                    if (destAirport.route.airportCode.equals(dataFiles.getDestAirportCode(Airport.readAirportsFile()))) {
                         System.out.println("Destination Found");
                         System.out.println(destAirport.route());
                         return true;

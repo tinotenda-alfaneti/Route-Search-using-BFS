@@ -24,7 +24,7 @@ public class Airport {
      * @return
      */
 
-    public HashMap<ArrayList<String>, Airport> readAirportsFile() {
+    public static HashMap<ArrayList<String>, Airport> readAirportsFile() {
 
         HashMap<ArrayList<String>, Airport> airportsFileData = new HashMap<ArrayList<String>, Airport>();
         try {
@@ -32,10 +32,15 @@ public class Airport {
             while (airportsFile.hasNextLine()) {
                 String[] line = airportsFile.nextLine().split(",");
                 ArrayList<String> cityCountry = new ArrayList<String>();
-                Airport temp = new Airport(line[4], Double.parseDouble(line[6]), Double.parseDouble(line[7]));
-                cityCountry.add(line[2]);
-                cityCountry.add(line[3]);
-                airportsFileData.put(cityCountry, temp);
+                try {
+                    Airport temp = new Airport(line[4], Double.parseDouble(line[6]), Double.parseDouble(line[7]));
+                    cityCountry.add(line[2]);
+                    cityCountry.add(line[3]);
+                    airportsFileData.put(cityCountry, temp);
+                } catch (NumberFormatException nfe) {
+                    continue;
+                }
+
             }
         } catch (FileNotFoundException fnf) {
             fnf.printStackTrace();

@@ -87,7 +87,7 @@ public class DataFile {
     }
 
     //TODO: Change the working of this method. It should used the already created fileOutPutData
-    public String getSourceAirportCode(HashMap<ArrayList<String>, String> airportsData) {
+    public String getSourceAirportCode(HashMap<ArrayList<String>, Airport> airportsData) {
 
         //Get airport code for the given city and country
         ArrayList<String[]> fileOutput = readInputFile();
@@ -96,14 +96,14 @@ public class DataFile {
         cityCountry.add(fileOutput.get(0)[0]);
         cityCountry.add(fileOutput.get(0)[1]);
         if (airportsData.containsKey(cityCountry)) {
-            airportCode = airportsData.get(cityCountry);
+            airportCode = airportsData.get(cityCountry).airportCode;
 
         }
         return airportCode;
     }
 
     //TODO: Also change this method
-    public String getDestAirportCode(HashMap<ArrayList<String>, String> countries){
+    public String getDestAirportCode(HashMap<ArrayList<String>, Airport> countries){
 
         //Get airport code for the given city and country
         ArrayList<String[]> fileOutput = readInputFile();
@@ -112,7 +112,7 @@ public class DataFile {
         cityCountry.add(fileOutput.get(1)[0]);
         cityCountry.add(fileOutput.get(1)[1]);
         if (countries.containsKey(cityCountry)) {
-            destCode = countries.get(cityCountry);
+            destCode = countries.get(cityCountry).airportCode;
 
         }
         return destCode;

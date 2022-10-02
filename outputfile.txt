@@ -1,1 +1,2 @@
-1. AW from ACC to TML0
+1. ET from ACC to ADD
+2. ET from ADD to HRE

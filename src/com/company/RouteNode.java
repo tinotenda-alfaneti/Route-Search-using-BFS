@@ -30,6 +30,13 @@ public class RouteNode {
 
     }
 
+    @Override
+    public String toString() {
+        return
+                "" + route +
+                ", from " + prev;
+    }
+
     /**
      *
      * @param result
@@ -42,7 +49,7 @@ public class RouteNode {
             for (RouteNode currRoute : result) {
                 String message = i + ". " + currRoute.route.airline + " from " +
                         currRoute.prev.route.airportCode + " to " +
-                        currRoute.route.airportCode + currRoute.route.stops;
+                        currRoute.route.airportCode + "\n";
                 System.out.println(message);
                 output.write(message);
                 i++;

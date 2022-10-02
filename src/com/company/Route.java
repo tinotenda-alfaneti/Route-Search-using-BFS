@@ -5,6 +5,11 @@ public class Route {
         String airline;
         int stops;
 
+    @Override
+    public String toString() {
+        return airportCode;
+    }
+
     /**
      *
      * @param airportCode
